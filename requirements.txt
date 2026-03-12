@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-community
+langchain-ollama
+chromadb
+pypdf
+python-dotenv
+boto3
+python-dotenv
+langchain-chroma          # fixes the deprecation warning you saw earlier
