@@ -1,0 +1,20 @@
+Project: Ecommerce Platform
+
+User Story
+As a customer I want to browse products so that I can choose items to purchase.
+
+Acceptance Criteria
+- Product list loads on homepage
+- Products display price and description
+- Search functionality available
+- System response < 2 seconds
+
+
+User Story
+As a customer I want to add items to my cart so that I can purchase multiple products.
+
+Acceptance Criteria
+- Add to cart button available
+- Cart updates instantly
+- Cart displays total price
+- System response < 2 seconds

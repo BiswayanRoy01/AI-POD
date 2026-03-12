@@ -1,0 +1,44 @@
+### Test Case #1 - Valid Email and Password
+- Description: Test the login function with a valid email and password.
+- Expected: Return 'token'
+- Result: Passed
+
+### Test Case #2 - Invalid Email
+- Description: Test the login function with an invalid email.
+- Expected: Return 'fail'
+- Result: Passed
+
+### Test Case #3 - Empty Password
+- Description: Test the login function with an empty password.
+- Expected: Return 'fail'
+- Result: Failed
+
+### Simulated Results:
+
+```python
+def valid_user(email, password):
+    # Simulated database for valid users
+    valid_users = {
+        "user1@example.com": "password1",
+        "user2@example.com": "password2",
+    }
+    return email in valid_users and valid_users[email] == password
+
+def login(email, password):
+    if valid_user(email, password):
+        return 'token'
+    else:
+        return 'fail'
+
+# Test Case #1 - Valid Email and Password
+print(login("user1@example.com", "password1"))  # Expected output: 'token'
+print(login("user1@example.com", "wrong_password"))  # Expected output: 'fail'
+
+# Test Case #2 - Invalid Email
+print(login("user3@example.com", "password3"))  # Expected output: 'fail'
+print(login("user3@example.com", "wrong_password"))  # Expected output: 'fail'
+
+# Test Case #3 - Empty Password
+print(login("user4@example.com", ""))  # Expected output: 'fail'
+print(login("user4@example.com", "wrong_password"))  # Expected output: 'fail'
+```

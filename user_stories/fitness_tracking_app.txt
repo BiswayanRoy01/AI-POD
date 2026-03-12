@@ -1,0 +1,20 @@
+Project: Fitness Tracking App
+
+User Story
+As a user I want to track my daily workouts so that I can monitor my fitness progress.
+
+Acceptance Criteria
+- Workout logging feature available
+- Users can enter exercise details
+- Data saved to user profile
+- System response < 2 seconds
+
+
+User Story
+As a user I want to set fitness goals so that I can stay motivated.
+
+Acceptance Criteria
+- Goal setting page available
+- Users can set target goals
+- Progress tracking enabled
+- System response < 2 seconds

@@ -1,0 +1,67 @@
+```python
+class UserService:
+    def __init__(self, user_database):
+        """
+        Initialize the user service with a user database.
+        
+        Args:
+        user_database (dict): A dictionary representing the user database.
+        """
+        self.user_database = user_database
+
+    def login(self, email, password):
+        """
+        Check if a user exists in the database with the provided email and password.
+        
+        Args:
+        email (str): The user's email.
+        password (str): The user's password.
+        
+        Returns:
+        str: A token if the user is valid, otherwise None.
+        """
+        # Check if the email exists in the database
+        if email in self.user_database:
+            # Check if the password matches the stored password
+            if self.user_database[email] == password:
+                # Return a token if the credentials are valid
+                return "valid_token"
+        # Return None if the credentials are invalid
+        return None
+
+
+class AuthService:
+    def __init__(self, user_database):
+        """
+        Initialize the authentication service with a user database.
+        
+        Args:
+        user_database (dict): A dictionary representing the user database.
+        """
+        self.user_service = UserService(user_database)
+
+    def authenticate(self, email, password):
+        """
+        Check if a user exists in the database with the provided email and password.
+        
+        Args:
+        email (str): The user's email.
+        password (str): The user's password.
+        
+        Returns:
+        str: A token if the user is valid, otherwise None.
+        """
+        return self.user_service.login(email, password)
+
+
+# Example usage:
+user_database = {
+    "user1@example.com": "password1",
+    "user2@example.com": "password2"
+}
+
+auth_service = AuthService(user_database)
+
+print(auth_service.authenticate("user1@example.com", "password1"))  # Output: "valid_token"
+print(auth_service.authenticate("user1@example.com", "wrong_password"))  # Output: None
+```

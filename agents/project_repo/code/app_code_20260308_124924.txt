@@ -1,0 +1,81 @@
+```python
+class UserDataBase:
+    """
+    Represents a simple user database.
+    """
+    def __init__(self):
+        self.users = {}
+
+    def add_user(self, email, password):
+        """
+        Adds a new user to the database.
+        
+        Args:
+        email (str): The user's email.
+        password (str): The user's password.
+        """
+        self.users[email] = password
+
+    def check_credentials(self, email, password):
+        """
+        Checks if the provided email and password are valid.
+        
+        Args:
+        email (str): The user's email.
+        password (str): The user's password.
+        
+        Returns:
+        str: The token if the credentials are valid, None otherwise.
+        """
+        if email in self.users and self.users[email] == password:
+            return "valid_token"
+        return None
+
+
+class AuthService:
+    """
+    Represents a simple authentication service.
+    """
+    def __init__(self, user_database):
+        """
+        Initializes the authentication service with a user database.
+        
+        Args:
+        user_database (UserDataBase): The user database to use.
+        """
+        self.user_database = user_database
+
+    def login(self, email, password):
+        """
+        Logs in a user and returns a token if valid.
+        
+        Args:
+        email (str): The user's email.
+        password (str): The user's password.
+        
+        Returns:
+        str: The token if the login is successful, None otherwise.
+        """
+        return self.user_database.check_credentials(email, password)
+
+
+def main():
+    # Create a user database
+    user_database = UserDataBase()
+
+    # Add some users to the database
+    user_database.add_user("user1@example.com", "password1")
+    user_database.add_user("user2@example.com", "password2")
+
+    # Create an authentication service
+    authentication_service = AuthService(user_database)
+
+    # Login a user
+    print(authentication_service.login("user1@example.com", "password1"))  # Should print "valid_token"
+    print(authentication_service.login("user1@example.com", "wrong_password"))  # Should print None
+    print(authentication_service.login("user3@example.com", "password3"))  # Should print None
+
+
+if __name__ == "__main__":
+    main()
+```

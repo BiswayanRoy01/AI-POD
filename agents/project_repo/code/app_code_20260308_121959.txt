@@ -1,0 +1,93 @@
+class UserDatabase:
+    def __init__(self):
+        self.users = {}
+
+    def add_user(self, email, password):
+        """
+        Adds a new user to the database.
+
+        Args:
+            email (str): The user's email.
+            password (str): The user's password.
+        """
+        self.users[email] = password
+
+    def check_credentials(self, email, password):
+        """
+        Checks if the given email and password are valid.
+
+        Args:
+            email (str): The user's email.
+            password (str): The user's password.
+
+        Returns:
+            bool: True if the email and password are valid, False otherwise.
+        """
+        return email in self.users and self.users[email] == password
+
+class AuthService:
+    def __init__(self, user_db):
+        """
+        Initializes the authentication service.
+
+        Args:
+            user_db (UserDatabase): The user database.
+        """
+        self.user_db = user_db
+        self.tokens = {}
+
+    def generate_token(self, email):
+        """
+        Generates a token for the given email if the email and password are valid.
+
+        Args:
+            email (str): The user's email.
+
+        Returns:
+            str: The generated token, or None if the email and password are invalid.
+        """
+        if self.user_db.check_credentials(email, 'password'):
+            token = 'valid_token'
+            self.tokens[email] = token
+            return token
+        return None
+
+    def get_token(self, email):
+        """
+        Retrieves the token for the given email.
+
+        Args:
+            email (str): The user's email.
+
+        Returns:
+            str: The token for the given email, or None if the email is not found.
+        """
+        return self.tokens.get(email)
+
+def login(email, password):
+    """
+    Logs in the user with the given email and password.
+
+    Args:
+        email (str): The user's email.
+        password (str): The user's password.
+
+    Returns:
+        str: The generated token, or None if the email and password are invalid.
+    """
+    user_db = UserDatabase()
+    auth_service = AuthService(user_db)
+    token = auth_service.generate_token(email)
+    return token
+
+def main():
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
+    token = login(email, password)
+    if token:
+        print(f"Login successful. Token: {token}")
+    else:
+        print("Invalid email/password")
+
+if __name__ == "__main__":
+    main()

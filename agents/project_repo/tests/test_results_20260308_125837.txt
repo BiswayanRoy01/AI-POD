@@ -1,0 +1,14 @@
+### Test Case 1:
+- Description: Test with valid credentials
+- Expected: Token
+- Result: Passed
+
+### Test Case 2:
+- Description: Test with invalid email
+- Expected: fail
+- Result: Passed
+
+### Test Case 3:
+- Description: Test with invalid password
+- Expected: fail
+- Result: Passed

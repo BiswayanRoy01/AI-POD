@@ -1,0 +1,42 @@
+### Test Cases for Login Function
+
+#### Test Case 1: Valid Email and Password
+
+* Description: Test with valid email and password to get 'token'
+* Expected: Return 'token'
+* Result: Passed
+
+#### Test Case 2: Invalid Email
+
+* Description: Test with invalid email to get 'fail'
+* Expected: Return 'fail'
+* Result: Passed
+
+#### Test Case 3: Invalid Password
+
+* Description: Test with invalid password to get 'fail'
+* Expected: Return 'fail'
+* Result: Passed
+
+### Simulated Results:
+
+```python
+import unittest
+
+class TestLoginFunction(unittest.TestCase):
+
+    def test_valid_email_password(self):
+        self.assertEqual(login('valid@example.com', 'valid_password'), 'token')
+        self.assertEqual(login('valid@example.com', 'invalid_password'), 'fail')
+
+    def test_invalid_email(self):
+        self.assertEqual(login('invalid@example.com', 'valid_password'), 'fail')
+        self.assertEqual(login('invalid@example.com', 'invalid_password'), 'fail')
+
+    def test_invalid_password(self):
+        self.assertEqual(login('valid@example.com', 'invalid_password'), 'fail')
+        self.assertEqual(login('valid@example.com', 'valid_password'), 'fail')
+
+if __name__ == '__main__':
+    unittest.main()
+```

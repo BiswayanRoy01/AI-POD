@@ -1,0 +1,20 @@
+Project: Inventory Management System
+
+User Story
+As a manager I want to add products to inventory so that stock is tracked properly.
+
+Acceptance Criteria
+- Product entry form available
+- Product details stored in database
+- Unique product ID generated
+- System response < 2 seconds
+
+
+User Story
+As a manager I want to receive low stock alerts so that inventory is restocked on time.
+
+Acceptance Criteria
+- Stock monitoring enabled
+- Low stock notification generated
+- Alert visible on dashboard
+- System response < 2 seconds

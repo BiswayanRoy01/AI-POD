@@ -1,0 +1,21 @@
+### System Design
+
+#### Components:
+• **Login Service**: Handles user authentication via email/password
+• **Database**: Stores user credentials and session information
+• **Session Store**: Manages user sessions
+• **API Gateway**: Routes API requests to the Login Service
+
+#### Workflow:
+1. User submits login request (email/password) via API Gateway
+2. Login Service authenticates user credentials and creates a new session
+3. Session Store updates the user's session information
+4. If credentials are valid, returns a session token to the API Gateway
+5. If credentials are invalid, returns an error response to the API Gateway
+6. API Gateway returns the result to the client
+
+#### Tech Stack:
+• Programming languages: Node.js (for Login Service and API Gateway)
+• Framework: Express.js
+• Database: MongoDB
+• Session store: Redis

@@ -1,0 +1,111 @@
+```python
+class UserService:
+    def __init__(self, database):
+        """
+        Initialize the user service with a database.
+
+        :param database: UserDatabase instance
+        """
+        self.database = database
+
+    def authenticate(self, email, password):
+        """
+        Authenticate a user using the provided email and password.
+
+        :param email: User email
+        :param password: User password
+        :return: Token if authentication is successful, None otherwise
+        """
+        user = self.database.get_user_by_email(email)
+        if user and user.verify_password(password):
+            return user.generate_token()
+        return None
+
+class UserDatabase:
+    def __init__(self):
+        """
+        Initialize the user database.
+        """
+        self.users = {}
+
+    def get_user_by_email(self, email):
+        """
+        Get a user by their email.
+
+        :param email: User email
+        :return: User instance if found, None otherwise
+        """
+        return self.users.get(email)
+
+    def add_user(self, email, password):
+        """
+        Add a new user to the database.
+
+        :param email: User email
+        :param password: User password
+        """
+        self.users[email] = User(email, password)
+
+class User:
+    def __init__(self, email, password):
+        """
+        Initialize a new user.
+
+        :param email: User email
+        :param password: User password
+        """
+        self.email = email
+        self.password = password
+
+    def verify_password(self, password):
+        """
+        Verify a user's password.
+
+        :param password: Password to verify
+        :return: True if password is correct, False otherwise
+        """
+        return self.password == password
+
+    def generate_token(self):
+        """
+        Generate a token for the user.
+
+        :return: Token
+        """
+        # Implement token generation logic here
+        # For simplicity, we'll just return a random string
+        import secrets
+        return secrets.token_urlsafe(16)
+
+class AuthService:
+    def __init__(self, user_service):
+        """
+        Initialize the authentication service with a user service.
+
+        :param user_service: UserService instance
+        """
+        self.user_service = user_service
+
+    def login(self, email, password):
+        """
+        Handle user login.
+
+        :param email: User email
+        :param password: User password
+        :return: Token if authentication is successful, None otherwise
+        """
+        token = self.user_service.authenticate(email, password)
+        return token
+
+# Example usage:
+database = UserDatabase()
+user_service = UserService(database)
+auth_service = AuthService(user_service)
+
+# Add some users to the database
+database.add_user("user@example.com", "password123")
+
+# Login and get a token
+token = auth_service.login("user@example.com", "password123")
+print(token)  # Output: a generated token
+```

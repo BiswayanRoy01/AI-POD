@@ -1,0 +1,20 @@
+### User Story 1:
+As a user, I want to create a unique username and password combination so that I can securely log in to the application.
+
+• The system should generate a unique username and password for each user upon registration.
+• The password should be a minimum of 8 characters long and include at least one uppercase letter, one lowercase letter, and one special character.
+• The system should allow users to update their password securely through a password reset process.
+
+### User Story 2:
+As a user, I want to receive a password reset link via email so that I can reset my password securely.
+
+• The system should send a password reset link to the user's registered email address when they request a password reset.
+• The password reset link should be valid for a limited time (e.g., 30 minutes) to prevent unauthorized access.
+• The system should validate the password reset link before allowing the user to reset their password.
+
+### User Story 3:
+As a user, I want to receive a notification if the password reset link is not successfully used within the time limit so that I can try again.
+
+• The system should send a notification to the user's registered email address after the password reset link has expired.
+• The notification should include instructions on how to try again.
+• The system should allow the user to retry the password reset process after receiving the notification.

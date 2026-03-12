@@ -1,0 +1,10 @@
+
+Project: Learning Management System
+
+Test Case
+1. Open application
+2. Authenticate user
+3. Perform main operation
+
+Expected Result
+Operation should complete successfully.

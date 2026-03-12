@@ -1,0 +1,20 @@
+### User Story 1:
+As a user, I want to register for a new account so that I can securely access my account information.
+
+* As a user, I should be able to provide a valid email address and password during registration.
+* As a user, I should receive an email verification link to activate my account.
+* As a user, I should be unable to access the account without successfully verifying their email address.
+
+### User Story 2:
+As a user, I want to log in to my existing account using my email and password so that I can access my account features.
+
+* As a user, I should be able to enter my email address and password to log in successfully.
+* As a user, I should receive a secure token after successful login.
+* As a user, I should be prompted to log out after a certain period of inactivity.
+
+### User Story 3:
+As a user, I want to receive a password reset link so that I can recover my account password.
+
+* As a user, I should be able to request a password reset link via email or password reset form.
+* As a user, I should receive a password reset link that is valid for a limited time.
+* As a user, I should be able to use the password reset link to change their password securely.

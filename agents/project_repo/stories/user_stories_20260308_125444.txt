@@ -1,0 +1,23 @@
+### User Story 1:
+As a user, I want to create an account with a secure login system using email and password, so that I can access my profile information and manage my account securely.
+
+* Acceptance Criteria:
+ + The system requires a unique email address and a strong password to create an account.
+ + The system validates the email address and password to ensure they meet the required format and strength.
+ + The system generates a verification code sent to the user's email address, which must be entered during account creation.
+
+### User Story 2:
+As a user, I want to log in to the system using my email and password, so that I can access my profile information and perform system functions.
+
+* Acceptance Criteria:
+ + The system allows users to enter their email address and password to log in.
+ + The system authenticates the user's credentials, redirecting them to the dashboard if login is successful.
+ + The system displays an error message if the login credentials are invalid or do not match the stored values.
+
+### User Story 3:
+As a user, I want to reset my password using a secure token, so that I can regain access to my account without revealing my sensitive information.
+
+* Acceptance Criteria:
+ + The system generates a unique password reset token and sends it to the user's email address.
+ + The user can enter the token to reset their password, which is validated by the system.
+ + The system updates the user's password with the new value after successful password reset.

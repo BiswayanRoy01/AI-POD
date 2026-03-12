@@ -1,0 +1,23 @@
+### System Architecture:
+
+* **Components:**
+  • **Authentication Service**: Handles user login, verification, and session management.
+  • **Database**: Stores user credentials, session data, and other account-related information.
+  • **API Gateway**: Routes incoming requests to the Authentication Service and handles responses.
+
+* **Workflow:**
+  1. User submits login credentials (email, password) to API Gateway.
+  2. API Gateway forwards request to Authentication Service.
+  3. Authentication Service authenticates user credentials.
+  4. If valid, generates a session token and stores it in the database.
+  5. Returns session token to API Gateway.
+  6. API Gateway returns session token to the user's browser.
+  7. Subsequent requests include the session token in the request headers.
+  8. Authentication Service verifies the session token on each request.
+  9. If invalid, returns an error response.
+
+* **Tech Stack:**
+  • Programming Language: Node.js
+  • Framework: Express.js
+  • Database: MongoDB
+  • Authentication Library: Passport.js

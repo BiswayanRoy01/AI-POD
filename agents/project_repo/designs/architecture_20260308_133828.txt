@@ -1,0 +1,20 @@
+### System Architecture
+
+* **Components:**
+  • **Authentication Service:** handles user login, validation, and session management
+  • **Database:** stores user credentials and session data
+  • **API Gateway:** handles incoming requests, authenticates users, and routes to the Authentication Service
+  • **Frontend Application:** user interface for login and account management
+* **Workflow:**
+  1. User submits login credentials through API Gateway
+  2. API Gateway authenticates user credentials using Authentication Service
+  3. Authentication Service verifies credentials and generates session token
+  4. If valid, Authentication Service creates and stores session data in Database
+  5. API Gateway returns session token to User
+  6. User stores session token and uses it for subsequent requests
+  7. If invalid credentials, API Gateway returns error to User
+* **Tech Stack:**
+  • Programming languages: Java, Python
+  • Frameworks: Spring Boot, Flask
+  • Databases: MySQL, PostgreSQL
+  • API Gateway: NGINX, AWS API Gateway

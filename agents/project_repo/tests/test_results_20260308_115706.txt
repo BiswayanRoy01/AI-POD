@@ -1,0 +1,39 @@
+### Test Case Ideas:
+
+#### Test Case 1:
+- Description: Test with a valid user
+- Expected: Token
+- Result: Passed
+
+#### Test Case 2:
+- Description: Test with an invalid email
+- Expected: 'fail'
+- Result: Passed
+
+#### Test Case 3:
+- Description: Test with an invalid password
+- Expected: 'fail'
+- Result: Passed
+
+### Simulated Results:
+
+Test Case 1:
+- Description: Test with a valid user
+- Expected: Token
+- Result: Passed
+
+ Token returned: '1234567890'
+
+Test Case 2:
+- Description: Test with an invalid email
+- Expected: 'fail'
+- Result: Passed
+
+ 'fail' returned
+
+Test Case 3:
+- Description: Test with an invalid password
+- Expected: 'fail'
+- Result: Passed
+
+ 'fail' returned

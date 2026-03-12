@@ -1,0 +1,23 @@
+### User Story 1: Secure Login System with Email
+
+As a user, I want to be able to create a secure login system with email and password so that I can protect my account from unauthorized access.
+
+* As a user, the login system should require both email and password to authenticate, and the system should not accept any other combination of credentials.
+* As a user, the login system should display an error message if the email or password is incorrect or if the account is already locked out due to excessive login attempts.
+* As a user, the login system should send a password reset email to the registered email address if the user forgets their password.
+
+### User Story 2: Secure Password Reset
+
+As a user, I want to be able to reset my password using the password reset email so that I can regain access to my account in case I forget my password.
+
+* As a user, the password reset link should be valid for a limited amount of time (e.g. 24 hours) to prevent unauthorized access.
+* As a user, the password reset system should require the user to enter their email address to receive the password reset link.
+* As a user, the password reset system should update the user's account with the new password after it has been successfully changed.
+
+### User Story 3: Account Lockout Prevention
+
+As a user, I want to be able to prevent my account from being locked out due to excessive login attempts so that I can maintain access to my account even in case of a security breach.
+
+* As a user, the account lockout system should have a limited number of allowed login attempts before locking the account (e.g. 5 attempts).
+* As a user, the account lockout system should allow for a temporary password reset after the account has been locked out.
+* As a user, the account lockout system should notify the user via email or notification if the account is locked out due to excessive login attempts.

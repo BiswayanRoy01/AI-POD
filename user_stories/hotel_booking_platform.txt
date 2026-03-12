@@ -1,0 +1,20 @@
+Project: Hotel Booking Platform
+
+User Story
+As a user I want to search available hotels so that I can find accommodation.
+
+Acceptance Criteria
+- Hotel search feature available
+- Filters for location and price
+- Hotel details displayed
+- System response < 2 seconds
+
+
+User Story
+As a user I want to book hotel rooms so that I can reserve my stay.
+
+Acceptance Criteria
+- Booking form available
+- Payment option integrated
+- Booking confirmation generated
+- System response < 2 seconds

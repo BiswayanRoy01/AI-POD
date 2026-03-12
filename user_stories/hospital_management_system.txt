@@ -1,0 +1,20 @@
+Project: Hospital Management System
+
+User Story
+As a patient I want to book doctor appointments so that I can receive medical consultation.
+
+Acceptance Criteria
+- Appointment booking page available
+- Doctor schedule displayed
+- Booking confirmation message shown
+- System response < 2 seconds
+
+
+User Story
+As a doctor I want to view patient records so that I can provide proper treatment.
+
+Acceptance Criteria
+- Patient history accessible
+- Doctor authentication required
+- Records updated securely
+- System response < 2 seconds

@@ -1,0 +1,63 @@
+```python
+class UserService:
+    def __init__(self, db):
+        self.db = db
+
+    def validate_credentials(self, email, password):
+        # Assuming the database is a dictionary where the keys are email addresses
+        # and the values are passwords
+        if email in self.db and self.db[email] == password:
+            return True
+        return False
+
+
+class AuthService:
+    def __init__(self, db, secret_key):
+        self.db = db
+        self.secret_key = secret_key
+
+    def generate_token(self, email):
+        # Generate a token based on the email address
+        token = self.secret_key + email
+        return token
+
+    def login(self, email, password):
+        if not self.validate_credentials(email, password):
+            raise ValueError("Invalid email or password")
+
+        # Generate a token for the user
+        token = self.generate_token(email)
+
+        return token
+
+
+def create_database():
+    db = {}
+    db["user1@example.com"] = "password1"
+    db["user2@example.com"] = "password2"
+    return db
+
+
+def main():
+    # Create the database
+    db = create_database()
+
+    # Create the auth service
+    secret_key = "my_secret_key"
+    auth_service = AuthService(db, secret_key)
+
+    # Login
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
+    try:
+        token = auth_service.login(email, password)
+        print(f"Logged in successfully. Your token is: {token}")
+    except ValueError as e:
+        print(e)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+This code implements a basic user authentication system using a dictionary-based database. The `UserService` class checks the user's credentials against the database, while the `AuthService` class generates a token for the user after successful validation. The `main` function demonstrates how to use these classes to log in a user.

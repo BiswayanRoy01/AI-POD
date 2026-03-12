@@ -1,0 +1,57 @@
+```python
+class UserService:
+    def __init__(self, user_database):
+        self.user_database = user_database
+        self.auth_tokens = {}
+
+    def login(self, email, password):
+        # Check if the email exists in the user database
+        if self.user_database.check_email(email):
+            # Check if the password is correct
+            if self.user_database.check_password(email, password):
+                # Generate an authentication token
+                token = self.generate_token()
+                self.auth_tokens[token] = (email, password)
+                return token
+        return None
+
+    def generate_token(self):
+        # Generate a unique token using UUID
+        import uuid
+        return str(uuid.uuid4())
+
+class UserDatabase:
+    def __init__(self, users):
+        self.users = users
+
+    def check_email(self, email):
+        return email in self.users
+
+    def check_password(self, email, password):
+        return self.users[email][1] == password
+
+class AuthService:
+    def __init__(self, user_database):
+        self.user_database = user_database
+
+    def authenticate(self, email, password):
+        token = self.user_database.login(email, password)
+        if token:
+            return token
+        return None
+
+# Example usage
+users = {
+    "user1@example.com": ("password1",),
+    "user2@example.com": ("password2",),
+}
+
+user_database = UserDatabase(users)
+auth_service = AuthService(user_database)
+
+token = auth_service.authenticate("user1@example.com", "password1")
+if token:
+    print(f"Login successful with token: {token}")
+else:
+    print("Invalid email or password")
+```

@@ -1,0 +1,20 @@
+### User Story 1:
+As a user, I want to create a new account with a secure login system using email and password, so that I can authenticate and access my account securely.
+
+• The system should allow users to input a unique email address and password combination.
+• The system should validate user input to ensure email address and password meet security standards.
+• The system should store user credentials securely using encryption.
+
+### User Story 2:
+As a user, I want to log in to my account using email and password, so that I can access my account and perform necessary actions.
+
+• The system should allow users to input their email address and password to log in.
+• The system should verify user credentials against stored values to authenticate.
+• The system should provide an error message if login fails due to invalid credentials.
+
+### User Story 3:
+As a user, I want to recover my account using a secure login system, so that I can regain access to my account if I forget my password.
+
+• The system should allow users to input their email address to request password reset.
+• The system should send a secure password reset link to the user's registered email address.
+• The system should prompt the user to enter a new password after receiving the reset link.

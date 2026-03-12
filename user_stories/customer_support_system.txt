@@ -1,0 +1,20 @@
+Project: Customer Support System
+
+User Story
+As a customer I want to submit a support ticket so that I can report service issues.
+
+Acceptance Criteria
+- Ticket form available on dashboard
+- User authentication required
+- Ticket confirmation message displayed
+- System response < 2 seconds
+
+
+User Story
+As a support agent I want to view customer tickets so that I can resolve issues.
+
+Acceptance Criteria
+- Agents can view all assigned tickets
+- Tickets show priority and status
+- Agents can update ticket status
+- System response < 2 seconds

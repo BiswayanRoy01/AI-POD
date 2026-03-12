@@ -1,0 +1,23 @@
+**System Architecture:**
+
+* Components:
+  • Frontend (Client-side): Handles user input, rendering, and interaction with the system.
+  • Backend (Server-side): Handles user authentication, session management, and data storage.
+  • Database: Stores user credentials, session data, and other relevant information.
+  • API (Application Programming Interface): Exposes endpoints for authentication, session management, and other system services.
+
+**Workflow:**
+
+1. User submits login credentials (email, password) through the frontend.
+2. Backend receives the request, checks credentials against stored data.
+3. If valid, generates a session token and stores it in the database.
+4. If invalid, returns an error response to the frontend.
+5. If valid, the session token is stored in the user's browser (or stored in a server-side session).
+6. The user can access their account using the session token.
+
+**Tech Stack:**
+
+* Programming languages: Node.js (Backend), JavaScript (Frontend)
+* Framework: Express.js (Backend), React (Frontend)
+* Database: MySQL
+* Security: HTTPS, JWT (JSON Web Tokens) for session management
